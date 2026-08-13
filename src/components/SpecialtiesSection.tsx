@@ -75,14 +75,10 @@ export const SpecialtiesSection: React.FC = () => {
       id: "clareamento-dental",
       category: "estetica",
       title: "Clareamento Dental Combinado Premium",
-      subtitle:
-        "Sorriso visivelmente mais branco e iluminado sem sensibilidade",
-      description:
-        "Protocolo exclusivo que combina a velocidade do laser em consultório ao toque contínuo do clareamento caseiro.",
-      fullDetails:
-        "Nosso protocolo de clareamento é desenvolvido individualmente para cada paciente, utilizando géis clareadores neutros com agentes dessensibilizantes. Garantimos um clareamento profundo, seguro para o esmalte, atingindo tonalidades claras e homogêneas.",
-      image:
-        "https://images.pexels.com/photos/6627534/pexels-photo-6627534.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800",
+      subtitle: "Sorriso visivelmente mais branco e iluminado sem sensibilidade",
+      description: "Protocolo exclusivo que combina a velocidade do laser em consultório ao toque contínuo do clareamento caseiro.",
+      fullDetails: "Nosso protocolo de clareamento é desenvolvido individualmente para cada paciente, utilizando géis clareadores neutros com agentes dessensibilizantes. Garantimos um clareamento profundo, seguro para o esmalte, atingindo tonalidades claras e homogêneas.",
+      image: "https://images.pexels.com/photos/6627534/pexels-photo-6627534.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800",
       duration: "1 sessão clínica + 2 semanas caseiras",
       benefits: [
         "Zero dor ou desconforto pós-sessão",
@@ -100,12 +96,9 @@ export const SpecialtiesSection: React.FC = () => {
       category: "ortodontia",
       title: "Alinhadores Invisíveis & Ortodontia Estética",
       subtitle: "Dentes perfeitamente alinhados sem fios nem braquetes",
-      description:
-        "Placas transparentes removíveis feitas sob medida que movimentam seus dentes com conforto e extrema discrição.",
-      fullDetails:
-        "Os alinhadores transparentes revolucionaram a ortodontia. Através de simulação digital 3D, você descobre o resultado final do seu sorriso antes mesmo de iniciar o tratamento. As placas são confortáveis, não machucam as bochechas e permitem higienização total dos dentes sem restrições alimentares.",
-      image:
-        "https://images.pexels.com/photos/3845856/pexels-photo-3845856.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800",
+      description: "Placas transparentes removíveis feitas sob medida que movimentam seus dentes com conforto e extrema discrição.",
+      fullDetails: "Os alinhadores transparentes revolucionaram a ortodontia. Através de simulação digital 3D, você descobre o resultado final do seu sorriso antes mesmo de iniciar o tratamento. As placas são confortáveis, não machucam as bochechas e permitem higienização total dos dentes sem restrições alimentares.",
+      image: "https://images.pexels.com/photos/3845856/pexels-photo-3845856.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800",
       duration: "6 a 14 meses (média)",
       benefits: [
         "Removível para comer e escovar dentes",
@@ -123,12 +116,9 @@ export const SpecialtiesSection: React.FC = () => {
       category: "estetica",
       title: "Harmonização Orofacial (HOF)",
       subtitle: "Simetria, hidratação labial e rejuvenescimento harmônico",
-      description:
-        "Preenchimento com ácido hialurônico e BOTOX® para valorizar seus traços faciais em sintonia com seu sorriso.",
-      fullDetails:
-        "A Dra. Marcela Souza aplica conceitos avançados de anatomia facial para criar resultados extremamente elegantes e sutis. Trabalhamos com preenchimento labial refinado (contorno e volume), amenização de rugas de expressão e sorriso gengival com toxina botulínica de primeira linha.",
-      image:
-        "https://images.pexels.com/photos/20596945/pexels-photo-20596945.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800",
+      description: "Preenchimento com ácido hialurônico e BOTOX® para valorizar seus traços faciais em sintonia com seu sorriso.",
+      fullDetails: "A Dra. Marcela Souza aplica conceitos avançados de anatomia facial para criar resultados extremamente elegantes e sutis. Trabalhamos com preenchimento labial refinado (contorno e volume), amenização de rugas de expressão e sorriso gengival com toxina botulínica de primeira linha.",
+      image: "https://images.pexels.com/photos/20596945/pexels-photo-20596945.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800",
       duration: "1 consulta de 40 a 60 min",
       benefits: [
         "Resultados imediatos e muito naturais",
@@ -146,12 +136,9 @@ export const SpecialtiesSection: React.FC = () => {
       category: "reabilitacao",
       title: "Implantes Dentários & Reabilitação Oral",
       subtitle: "A segurança e a força de dentes naturais fixos novamente",
-      description:
-        "Substituição de raízes ausentes por pinos de titânio de grau médico com próteses em cerâmica de alta resistência.",
-      fullDetails:
-        "Volte a mastigar seus alimentos favoritos e a sorrir com total firmeza. Com cirurgia guiada por computador de corte mínimo, o implante dental é instalado de maneira rápida, indolor e com recuperação tranquila, oferecendo a estabilidade e o formato idênticos ao dente original.",
-      image:
-        "https://images.pexels.com/photos/6812453/pexels-photo-6812453.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800",
+      description: "Substituição de raízes ausentes por pinos de titânio de grau médico com próteses em cerâmica de alta resistência.",
+      fullDetails: "Volte a mastigar seus alimentos favoritos e a sorrir com total firmeza. Com cirurgia guiada por computador de corte mínimo, o implante dental é instalado de maneira rápida, indolor e com recuperação tranquila, oferecendo a estabilidade e o formato idênticos ao dente original.",
+      image: "https://images.pexels.com/photos/6812453/pexels-photo-6812453.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800",
       duration: "Planejamento + Cirurgia rápida guiada",
       benefits: [
         "Estabilidade absoluta para comer e falar",
@@ -169,12 +156,9 @@ export const SpecialtiesSection: React.FC = () => {
       category: "prevencao",
       title: "Check-Up Preventivo & Profilaxia Ultrassônica",
       subtitle: "Proteção continuada, gengivas saudáveis e hálito fresco",
-      description:
-        "Limpeza profissional com remoção de tártaro por ultrassom, polimento coronário e aplicação de flúor protetor.",
-      fullDetails:
-        "A prevenção é o pilar fundamental da Íntegra Odontologia. Em cada check-up preventivo, realizamos uma varredura completa da cavidade oral, exame gengival, profilaxia ultrassônica indolor e orientações de hábitos para manter seus dentes perfeitos a vida toda.",
-      image:
-        "https://images.pexels.com/photos/4269683/pexels-photo-4269683.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800",
+      description: "Limpeza profissional com remoção de tártaro por ultrassom, polimento coronário e aplicação de flúor protetor.",
+      fullDetails: "A prevenção é o pilar fundamental da Íntegra Odontologia. Em cada check-up preventivo, realizamos uma varredura completa da cavidade oral, exame gengival, profilaxia ultrassônica indolor e orientações de hábitos para manter seus dentes perfeitos a vida toda.",
+      image: "https://images.pexels.com/photos/4269683/pexels-photo-4269683.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800",
       duration: "1 sessão de 45 minutos",
       benefits: [
         "Eliminação do tártaro e manchas de superfície",
@@ -192,12 +176,9 @@ export const SpecialtiesSection: React.FC = () => {
       category: "estetica",
       title: "Lentes de Contato Dental",
       subtitle: "Transforme o formato, cor e harmonia do seu sorriso",
-      description:
-        "Lâminas ultrafinas de porcelana desenvolvidas sob medida para corrigir imperfeições estéticas.",
-      fullDetails:
-        "As lentes de contato dental permitem corrigir manchas, espaços entre dentes, pequenas fraturas e desalinhamentos com mínima intervenção na estrutura natural do dente. O resultado é um sorriso natural, elegante e duradouro.",
-      image:
-        "https://images.pexels.com/photos/6528908/pexels-photo-6528908.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800",
+      description: "Lâminas ultrafinas de porcelana desenvolvidas sob medida para corrigir imperfeições estéticas.",
+      fullDetails: "As lentes de contato dental permitem corrigir manchas, espaços entre dentes, pequenas fraturas e desalinhamentos com mínima intervenção na estrutura natural do dente. O resultado é um sorriso natural, elegante e duradouro.",
+      image: "https://images.pexels.com/photos/6528908/pexels-photo-6528908.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800",
       duration: "2 a 3 consultas",
       benefits: [
         "Resultado imediato e altamente estético",

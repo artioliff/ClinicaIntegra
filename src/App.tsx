@@ -4,7 +4,6 @@ import { HeroSection } from './components/HeroSection';
 import { SpecialtiesSection } from './components/SpecialtiesSection';
 import { BeforeAfterSlider } from './components/BeforeAfterSlider';
 import { AboutDoctorSection } from './components/AboutDoctorSection';
-// import { AtestadoDocGenerator } from './components/AtestadoDocGenerator';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { FaqSection } from './components/FaqSection';
 import { FooterSection } from './components/FooterSection';
@@ -37,9 +36,6 @@ export function App() {
 
         {/* Doctor Bio & Clinic Infrastructure */}
         <AboutDoctorSection />
-
-        {/* Interactive Official Document Replica & Certificate Generator */}
-        {/* <AtestadoDocGenerator /> */}
 
         {/* Verified Patient Reviews */}
         <TestimonialsSection />

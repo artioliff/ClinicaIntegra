@@ -1,4 +1,5 @@
 import React from 'react';
+import hero from '../assets/img/hero.png';
 import { Calendar, Sparkles, CheckCircle2, ShieldCheck, Heart, ArrowRight } from 'lucide-react';
 
 interface HeroSectionProps {
@@ -10,8 +11,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onOpenBookingModal,
   onOpenQuizModal,
 }) => {
-  const whatsappUrl =
-    'https://wa.me/5514996977025?text=Ol%C3%A1%2C%20Dra.%20Marcela!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20%C3%8Dntegra%20Odontologia.';
+  const whatsappUrl = 'https://wa.me/5514996977025?text=Ol%C3%A1%2C%20Dra.%20Marcela!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20%C3%8Dntegra%20Odontologia.';
 
   return (
     <section id="inicio" className="relative overflow-hidden bg-gradient-to-b from-[#FAF5F0] via-[#F6EAE8]/50 to-[#FAF5F0] pt-8 pb-16 lg:pt-14 lg:pb-24">
@@ -71,7 +71,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm md:text-base font-semibold text-white bg-gradient-to-r from-[#C48B8B] via-[#A26868] to-[#8A5252] hover:from-[#A26868] hover:to-[#6B3B3B] shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 border border-[#E6CA65]/30 cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center text-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm md:text-base font-semibold text-white bg-linear-to-t from-[#C48B8B] via-[#A26868] to-[#8A5252] hover:from-[#A26868] hover:to-[#6B3B3B] shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 border border-[#E6CA65]/30 cursor-pointer"
               >
                 <Calendar className="w-5 h-5 md:w-7 md:h-7" />
                 <span>Agendar via WhatsApp</span>
@@ -118,16 +118,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
               {/* Outer decorative gold frame */}
-              <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-[#D4AF37]/30 via-[#E8C5C5] to-[#A26868]/40 blur-md transform rotate-1" />
+              <div className="absolute -inset-2 rounded-3xl bg-linear-to-t from-[#D4AF37]/30 via-[#E8C5C5] to-[#A26868]/40 blur-md transform rotate-1" />
 
               <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white border border-[#E8C5C5]">
                 <img
-                  src="./assets/hero.png"
+                  src={hero}
                   alt="Paciente com sorriso radiante na clínica Íntegra Odontologia"
                   className="w-full h-[420px] sm:h-[480px] object-cover object-center"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
 
                 {/* Overlaid Badge Top Right */}
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-lg border border-[#E8C5C5] flex items-center gap-2 text-xs font-medium text-[#3A2E2B]">
@@ -161,7 +161,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               </div>
 
               {/* Floating Badge Left */}
-              {/* <div className="hidden sm:flex absolute -bottom-6 -left-6 bg-gradient-to-r from-[#FAF5F0] to-white p-3.5 rounded-2xl shadow-xl border border-[#D4AF37]/40 items-center gap-3">
+              {/* <div className="hidden sm:flex absolute -bottom-6 -left-6 bg-linear-to-t from-[#FAF5F0] to-white p-3.5 rounded-2xl shadow-xl border border-[#D4AF37]/40 items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-[#F6EAE8] flex items-center justify-center text-[#8A5252] font-bold text-lg">
                   🌸
                 </div>
