@@ -122,7 +122,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
               <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white border border-[#E8C5C5]">
                 <img
-                  src="https://images.pexels.com/photos/7803056/pexels-photo-7803056.jpeg?_gl=1*x6ktbz*_ga*MjEyMTU4NDg1MS4xNzg2MTM1MDIz*_ga_8JE65Q40S6*czE3ODYxMzUwMjMkbzEkZzEkdDE3ODYxMzUyMTgkajMkbDAkaDA."
+                  src="./assets/hero.png"
                   alt="Paciente com sorriso radiante na clínica Íntegra Odontologia"
                   className="w-full h-[420px] sm:h-[480px] object-cover object-center"
                 />
