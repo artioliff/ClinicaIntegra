@@ -1,115 +1,149 @@
-import React from 'react';
-import { Star, Quote, CheckCircle2, MessageSquare } from 'lucide-react';
+"use client";
 
-export const TestimonialsSection: React.FC = () => {
-  const testimonials = [
-    {
-      name: 'Ana Carolina B.',
-      role: 'Paciente de Lentes de Contato',
-      location: 'Bauru, SP',
-      text: 'Sempre tive receio de dentista por causa de experiências ruins na infância, mas a Dra. Marcela mudou totalmente minha percepção! Fiz minhas lentes de porcelana na Íntegra e foi super tranquilo, indolor e o resultado ficou PERFEITO!',
-      rating: 5,
-      date: 'Há 2 semanas',
-      avatar: 'https://images.pexels.com/photos/20596945/pexels-photo-20596945.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=200&w=200',
-    },
-    {
-      name: 'Marcos Vinícius T.',
-      role: 'Paciente de Alinhadores & Clareamento',
-      location: 'Bauru, SP',
-      text: 'O atendimento da Dra. Marcela é impecável do começo ao fim. A clínica no Centro é linda, super limpa e o cafezinho na recepção é ótimo. Fiz alinhadores e clareamento, meu sorriso mudou 100%. Recomendo para todo mundo!',
-      rating: 5,
-      date: 'Há 1 mês',
-      avatar: 'https://images.pexels.com/photos/4971499/pexels-photo-4971499.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=200&w=200',
-    },
-    {
-      name: 'Fernanda Oliveira',
-      role: 'Paciente de Harmonização Labial',
-      location: 'Bauru, SP',
-      text: 'Procurei a Dra. Marcela para preenchimento labial com muito medo de ficar artificial. Ela me explicou tudo com paciência, fez com extrema delicadeza e ficou tão harmônico que todos elogiaram sem saber o que eu tinha feito!',
-      rating: 5,
-      date: 'Há 3 semanas',
-      avatar: 'https://images.pexels.com/photos/31043312/pexels-photo-31043312.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=200&w=200',
-    },
+import { useState } from "react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+
+const testimonials = [
+  {
+    name: "Ana Paula M.",
+    rating: 5,
+    treatment: "Facetas de Porcelana",
+    text: "Fiz minha facetas com a Dra. Marcela e o resultado foi incrível! Meu sorriso mudou completamente. O atendimento foi super acolhedor, me senti à vontade do início ao fim.",
+    avatar: "AP",
+  },
+  {
+    name: "Carlos Eduardo S.",
+    rating: 5,
+    treatment: "Implante Dentário",
+    text: "Tinha muito medo de dentista, mas na Íntegra me senti seguro. O tratamento foi sem dor e o resultado ficou perfeito. Indico para todos os meus amigos!",
+    avatar: "CE",
+  },
+  {
+    name: "Juliana R.",
+    rating: 5,
+    treatment: "Alinhadores Invisíveis",
+    text: "Em 8 meses meus dentes ficaram alinhados sem ninguém nem perceber que eu estava usando aparelho. A Dra. Marcela é muito atenciosa e cuidadosa.",
+    avatar: "JR",
+  },
+  {
+    name: "Roberto F.",
+    rating: 5,
+    treatment: "Clareamento Dental",
+    text: "Resultado do clareamento foi surpreendente logo na primeira sessão. Clínica muito organizada, limpa e com equipe super atenciosa. Já agendei a próxima consulta!",
+    avatar: "RF",
+  },
+  {
+    name: "Fernanda T.",
+    rating: 5,
+    treatment: "Tratamento Preventivo",
+    text: "Levo toda a família na Íntegra há 3 anos. A Dra. Marcela tem paciência até com as crianças. É uma clínica diferente, onde você vai sem medo e sai sorrindo!",
+    avatar: "FT",
+  },
+];
+
+export default function TestimonialsSection() {
+  const [current, setCurrent] = useState(0);
+
+  const prev = () =>
+    setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1));
+  const next = () =>
+    setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1));
+
+  const visible = [
+    testimonials[current],
+    testimonials[(current + 1) % testimonials.length],
+    testimonials[(current + 2) % testimonials.length],
   ];
 
   return (
-    <section id="depoimentos" className="py-16 md:py-24 bg-gradient-to-b from-[#FAF5F0] via-rose-50/40 to-[#FAF5F0]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+    <section id="depoimentos" className="py-20 bg-[#2d1a1a]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#E8C5C5] text-xs font-semibold text-[#8A5252] shadow-2xs mb-3">
-            <MessageSquare className="w-4 h-4 text-[#D4AF37]" />
-            <span>Opinião de Quem Confia na Íntegra Odontologia</span>
-          </div>
-
-          <h2 className="font-serif-title text-3xl sm:text-4xl lg:text-5xl font-bold text-[#3A2E2B]">
-            Histórias de quem voltou a <span className="rose-gold-gradient-text italic font-script font-normal">sorrir sem medo</span>
+        <div className="text-center mb-14">
+          <span className="inline-block bg-[#9E6162] text-rose-200 text-xs font-semibold px-4 py-1.5 rounded-full mb-4">
+            Depoimentos
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            O que nossos pacientes falam
           </h2>
-
-          {/* Google Summary Badge */}
-          <div className="mt-4 inline-flex items-center gap-3 bg-white px-5 py-2.5 rounded-2xl shadow-sm border border-[#E8C5C5]">
-            <div className="flex text-amber-400">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-              ))}
-            </div>
-            <span className="text-xs font-bold text-[#3A2E2B]">4.9 de 5.0 estrelas</span>
-            <span className="text-xs text-[#8A5252] font-medium border-l border-rose-200 pl-3">
-              Avaliações Verificadas
-            </span>
-          </div>
+          <p className="text-[#c4a0a0] max-w-xl mx-auto">
+            Mais de 1.200 pacientes satisfeitos. Veja o que eles dizem sobre a
+            experiência na Íntegra Odontologia.
+          </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((t, idx) => (
+        {/* Carousel */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          {visible.map((t, i) => (
             <div
-              key={idx}
-              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#E8C5C5] flex flex-col justify-between relative group"
+              key={`${t.name}-${i}`}
+              className="bg-[#3d2020] rounded-2xl p-6 flex flex-col gap-4"
             >
-              <Quote className="w-8 h-8 text-rose-200 absolute top-4 right-4 opacity-50 group-hover:text-[#C48B8B] transition-colors" />
-
-              <div>
-                <div className="flex text-amber-400 mb-3">
-                  {[...Array(t.rating)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-
-                <p className="text-xs md:text-sm text-[#4A3E3B] leading-relaxed font-sans-body italic">
-                  "{t.text}"
-                </p>
+              {/* Stars */}
+              <div className="flex gap-0.5">
+                {Array.from({ length: t.rating }).map((_, j) => (
+                  <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                ))}
               </div>
-
-              <div className="mt-6 pt-4 border-t border-rose-100 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <img
-                    src={t.avatar}
-                    alt={t.name}
-                    className="w-10 h-10 rounded-full object-cover border-2 border-[#C48B8B]"
-                  />
-                  <div>
-                    <h4 className="font-serif-title font-bold text-[#3A2E2B] text-sm leading-snug">
-                      {t.name}
-                    </h4>
-                    <p className="text-[11px] text-[#8A5252] font-medium">
-                      {t.role}
-                    </p>
-                  </div>
+              <p className="text-[#e8d0c8] text-sm leading-relaxed flex-1">
+                &ldquo;{t.text}&rdquo;
+              </p>
+              <div className="flex items-center gap-3 pt-2 border-t border-[#5a3535]">
+                <div className="w-9 h-9 rounded-full bg-[#9E6162] flex items-center justify-center text-white text-xs font-bold shrink-0">
+                  {t.avatar}
                 </div>
-
-                <div className="text-[10px] text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md font-semibold flex items-center gap-1">
-                  <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-                  <span>Verificado</span>
+                <div>
+                  <p className="text-white font-semibold text-sm">{t.name}</p>
+                  <p className="text-[#c4a0a0] text-xs">{t.treatment}</p>
                 </div>
               </div>
-
             </div>
           ))}
         </div>
 
+        {/* Controls */}
+        <div className="flex justify-center gap-3">
+          <button
+            onClick={prev}
+            className="w-10 h-10 rounded-full border border-[#5a3535] text-[#c4a0a0] hover:bg-[#9E6162] hover:text-white hover:border-[#9E6162] transition-all flex items-center justify-center"
+            aria-label="Anterior"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <div className="flex gap-1.5 items-center">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`rounded-full transition-all ${
+                  i === current
+                    ? "w-6 h-2 bg-[#c4a0a0]"
+                    : "w-2 h-2 bg-[#5a3535] hover:bg-[#9E6162]"
+                }`}
+                aria-label={`Depoimento ${i + 1}`}
+              />
+            ))}
+          </div>
+          <button
+            onClick={next}
+            className="w-10 h-10 rounded-full border border-[#5a3535] text-[#c4a0a0] hover:bg-[#9E6162] hover:text-white hover:border-[#9E6162] transition-all flex items-center justify-center"
+            aria-label="Próximo"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Google rating */}
+        <div className="mt-10 flex justify-center">
+          <div className="bg-[#3d2020] rounded-2xl px-6 py-4 flex items-center gap-4">
+            <div className="text-4xl">⭐</div>
+            <div>
+              <p className="text-white font-bold text-xl">4.9 / 5.0</p>
+              <p className="text-[#c4a0a0] text-xs">Nota no Google · +300 avaliações</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
-};
+}
