@@ -6,36 +6,37 @@
  *
  * Os arquivos em src/assets/img são pares 9:16 (posts/story) prontos, com
  * texto, logo e legenda — não servem direto no card. Este script extrai só
- * o retrato da profissional (coordenadas de crop, medidas no original) e
- * dimensiona para o box do card (800x656 ≈ 1.22:1).
+ * o retrato da profissional (coordenadas de crop, medidas no original) na
+ * proporção 4:5 do card (`aspect-[4/5]`), exportando no tamanho nativo
+ * (sem upscale: nitidez real e arquivo menor).
+ *
+ * Limite de largura: o texto dos criativos ocupa a metade esquerda na mesma
+ * faixa vertical do rosto — passar do `left` abaixo deixa letra na foto.
  *
  * Se trocarem as fotos, ajuste as coordenadas (Paint/GIMP mostram a posição
- * do cursor em pixels) e rode de novo.
+ * do cursor em pixels), rode de novo e confira numa folha de contato.
  */
 import { mkdirSync } from "node:fs";
 import sharp from "sharp";
-
-const TARGET_W = 800;
-const TARGET_H = 656; // ≈ 1.22:1, o mesmo formato do card
 
 const TEAM = [
   {
     name: "equipe-karita",
     src: "src/assets/img/karita.jpg",
-    // corta à direita do texto "Precisamos falar sobre implantes"
-    extract: { left: 540, top: 530, width: 401, height: 329 },
+    // "Precisamos falar sobre implantes" termina por volta de x505
+    extract: { left: 515, top: 465, width: 426, height: 533 },
   },
   {
     name: "equipe-lilian",
     src: "src/assets/img/lilian.jpg",
-    // corta à direita do texto "você não precisa ter medo de sorrir"
-    extract: { left: 510, top: 500, width: 390, height: 320 },
+    // "você não precisa ter medo de sorrir" termina por volta de x505
+    extract: { left: 515, top: 470, width: 385, height: 481 },
   },
   {
     name: "equipe-marcela",
     src: "src/assets/img/marcela.jpg",
-    // corta à direita do texto "Se você tem medo de dentista..."
-    extract: { left: 500, top: 520, width: 400, height: 328 },
+    // "Se você tem medo de dentista..." termina por volta de x480
+    extract: { left: 495, top: 465, width: 405, height: 506 },
   },
 ];
 
@@ -44,7 +45,6 @@ mkdirSync("public/images", { recursive: true });
 for (const { name, src, extract } of TEAM) {
   const info = await sharp(src)
     .extract(extract)
-    .resize(TARGET_W, TARGET_H, { fit: "fill" })
     .webp({ quality: 80 })
     .toFile(`public/images/${name}.webp`);
   console.log(

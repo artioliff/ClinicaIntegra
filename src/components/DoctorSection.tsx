@@ -82,8 +82,8 @@ export default function DoctorSection() {
                 src={doctor.image}
                 alt={`Foto de ${doctor.name}`}
                 width={800}
-                height={656}
-                className="w-full h-80 object-cover object-top"
+                height={1000}
+                className="w-full aspect-[4/5] object-cover object-top"
               />
 
               <div className="p-6">
