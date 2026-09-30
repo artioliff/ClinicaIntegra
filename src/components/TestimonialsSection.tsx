@@ -74,8 +74,8 @@ export default function TestimonialsSection() {
             O que nossos pacientes falam
           </h2>
           <p className="text-brand-soft max-w-xl mx-auto">
-            Veja o que os pacientes dizem sobre a
-            experiência na Íntegra Odontologia.
+            Veja o que os pacientes dizem sobre a experiência na Íntegra
+            Odontologia.
           </p>
         </div>
 
@@ -89,7 +89,10 @@ export default function TestimonialsSection() {
               {/* Stars */}
               <div className="flex gap-0.5" aria-hidden="true">
                 {Array.from({ length: t.rating }).map((_, j) => (
-                  <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  <Star
+                    key={j}
+                    className="w-4 h-4 fill-amber-400 text-amber-400"
+                  />
                 ))}
               </div>
               <span className="sr-only">{t.rating} de 5 estrelas</span>

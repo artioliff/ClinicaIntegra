@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { ADDRESS_CITY, ADDRESS_LINE, PHONE_DISPLAY, PHONE_TEL, SITE, SITE_URL } from "@/config/site";
+import {
+  ADDRESS_CITY,
+  ADDRESS_LINE,
+  PHONE_DISPLAY,
+  PHONE_TEL,
+  SITE,
+  SITE_URL,
+} from "@/config/site";
 
 export const metadata: Metadata = {
   title: `Política de Privacidade – ${SITE.name}`,

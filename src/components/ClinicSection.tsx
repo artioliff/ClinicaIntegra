@@ -3,7 +3,11 @@ import Image from "next/image";
 
 /** Colagem do espaço físico — deslocamentos verticais criam o efeito quebrado. */
 const gallery = [
-  { src: "/images/clinica-recepcao.webp", alt: "Interior da clínica", offset: "" },
+  {
+    src: "/images/clinica-recepcao.webp",
+    alt: "Interior da clínica",
+    offset: "",
+  },
   {
     src: "/images/clinica-equipamentos.webp",
     alt: "Equipamentos odontológicos",
@@ -95,8 +99,8 @@ export default function ClinicSection() {
               diagnósticos precisos e tratamentos eficientes.
             </p>
             <p className="text-body mb-6">
-              Da recepção ao consultório, cada detalhe foi pensado para que
-              você se sinta confortável e confiante desde o primeiro momento.
+              Da recepção ao consultório, cada detalhe foi pensado para que você
+              se sinta confortável e confiante desde o primeiro momento.
             </p>
             <a
               href="#contato"

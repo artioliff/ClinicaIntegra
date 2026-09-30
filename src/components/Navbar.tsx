@@ -75,7 +75,11 @@ export default function Navbar() {
           aria-expanded={open}
           aria-controls="menu-mobile"
         >
-          {open ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
+          {open ? (
+            <X className="w-6 h-6" aria-hidden="true" />
+          ) : (
+            <Menu className="w-6 h-6" aria-hidden="true" />
+          )}
         </button>
       </div>
 

@@ -45,13 +45,21 @@ const treatments = [
   },
 ];
 
-const categories = ["Todos", "Estética", "Implantodontia", "Endodontia", "Preventiva"];
+const categories = [
+  "Todos",
+  "Estética",
+  "Implantodontia",
+  "Endodontia",
+  "Preventiva",
+];
 
 export default function TreatmentsSection() {
   const [active, setActive] = useState("Todos");
 
   const filtered =
-    active === "Todos" ? treatments : treatments.filter((t) => t.category === active);
+    active === "Todos"
+      ? treatments
+      : treatments.filter((t) => t.category === active);
 
   return (
     <section id="tratamentos" className="py-20 bg-surface">
@@ -106,7 +114,9 @@ export default function TreatmentsSection() {
                 {t.category}
               </span>
               <h3 className="text-lg font-bold text-ink mb-2">{t.title}</h3>
-              <p className="text-sm text-body mb-4 leading-relaxed">{t.description}</p>
+              <p className="text-sm text-body mb-4 leading-relaxed">
+                {t.description}
+              </p>
               <div className="flex flex-wrap gap-2">
                 {t.benefits.map((b) => (
                   <span

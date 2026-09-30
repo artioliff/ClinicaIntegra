@@ -21,8 +21,7 @@ const results = [
   },
 ];
 
-const PHOTO_SIZES =
-  "(min-width: 1024px) 203px, (min-width: 640px) 45vw, 50vw";
+const PHOTO_SIZES = "(min-width: 1024px) 203px, (min-width: 640px) 45vw, 50vw";
 
 export default function ResultsSection() {
   return (

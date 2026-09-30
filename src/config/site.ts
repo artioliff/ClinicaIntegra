@@ -53,12 +53,12 @@ export const GOOGLE_MAPS_SEARCH =
 
 /** Embed do Google Maps do endereço da clínica */
 export const MAPS_EMBED_SRC = `https://maps.google.com/maps?q=${encodeURIComponent(
-  ADDRESS_FULL
+  ADDRESS_FULL,
 )}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
 
 /** Link "Como chegar" */
 export const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-  ADDRESS_FULL
+  ADDRESS_FULL,
 )}`;
 
 /* ------------------------------------------------------------- navegação */

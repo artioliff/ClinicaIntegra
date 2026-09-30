@@ -38,7 +38,9 @@ for (const { id, w, h, out } of PHOTOS) {
     .resize(w, h, { fit: "cover" })
     .webp({ quality: 80 })
     .toFile(`public/images/${out}.webp`);
-  console.log(`✓ ${out}.webp  ${info.width}x${info.height}  ${(
-    info.size / 1024
-  ).toFixed(0)}KB`);
+  console.log(
+    `✓ ${out}.webp  ${info.width}x${info.height}  ${(info.size / 1024).toFixed(
+      0,
+    )}KB`,
+  );
 }

@@ -46,7 +46,11 @@ export default function ContactSection() {
       messageParts.push(`*Mensagem:* ${truncated}`);
     }
 
-    window.open(waLink(messageParts.join("\n")), "_blank", "noopener,noreferrer");
+    window.open(
+      waLink(messageParts.join("\n")),
+      "_blank",
+      "noopener,noreferrer",
+    );
     setSubmitted(true);
   }
 
@@ -62,8 +66,8 @@ export default function ContactSection() {
             Agende sua consulta
           </h2>
           <p className="text-body max-w-xl mx-auto">
-            Dê o primeiro passo para transformar o seu sorriso. Entre em
-            contato e agende sua avaliação gratuita.
+            Dê o primeiro passo para transformar o seu sorriso. Entre em contato
+            e agende sua avaliação gratuita.
           </p>
         </div>
 
@@ -234,7 +238,9 @@ export default function ContactSection() {
                       required
                       autoComplete="tel"
                       value={form.phone}
-                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                      onChange={(e) =>
+                        setForm({ ...form, phone: e.target.value })
+                      }
                       placeholder="(14) 9 0000-0000"
                       className="w-full px-4 py-2.5 rounded-xl border border-rose-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand"
                     />
@@ -252,7 +258,9 @@ export default function ContactSection() {
                       type="email"
                       autoComplete="email"
                       value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
+                      onChange={(e) =>
+                        setForm({ ...form, email: e.target.value })
+                      }
                       placeholder="seu@email.com"
                       className="w-full px-4 py-2.5 rounded-xl border border-rose-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand"
                     />
@@ -270,7 +278,9 @@ export default function ContactSection() {
                     id="contact-service"
                     name="service"
                     value={form.service}
-                    onChange={(e) => setForm({ ...form, service: e.target.value })}
+                    onChange={(e) =>
+                      setForm({ ...form, service: e.target.value })
+                    }
                     className="w-full px-4 py-2.5 rounded-xl border border-rose-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand"
                   >
                     <option value="">Selecione um tratamento</option>
@@ -294,7 +304,9 @@ export default function ContactSection() {
                     name="message"
                     rows={3}
                     value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
+                    onChange={(e) =>
+                      setForm({ ...form, message: e.target.value })
+                    }
                     placeholder="Conte um pouco sobre o que você precisa..."
                     className="w-full px-4 py-2.5 rounded-xl border border-rose-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand resize-none"
                   />
@@ -332,8 +344,8 @@ export default function ContactSection() {
                     >
                       Política de Privacidade
                     </Link>
-                    . Seus dados não são armazenados por este site: a mensagem
-                    é aberta no seu WhatsApp.
+                    . Seus dados não são armazenados por este site: a mensagem é
+                    aberta no seu WhatsApp.
                   </span>
                 </label>
               </form>

@@ -52,7 +52,10 @@ export default function HeroSection() {
           {/* Features grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
             {features.map((f) => (
-              <div key={f} className="flex items-center gap-2 text-sm text-body">
+              <div
+                key={f}
+                className="flex items-center gap-2 text-sm text-body"
+              >
                 <CheckCircle2 className="w-4 h-4 text-brand shrink-0" />
                 {f}
               </div>
@@ -117,7 +120,9 @@ export default function HeroSection() {
               </div>
               <div>
                 <p className="font-bold text-ink text-sm">Dra. Marcela Souza</p>
-                <p className="text-xs text-brand">Cirurgiã-Dentista · Íntegra Odontologia</p>
+                <p className="text-xs text-brand">
+                  Cirurgiã-Dentista · Íntegra Odontologia
+                </p>
                 <p className="text-xs text-muted flex items-center gap-1 mt-0.5">
                   <span className="text-red-400" aria-hidden="true">
                     ❤

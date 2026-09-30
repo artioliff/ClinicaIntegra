@@ -95,7 +95,10 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Contato</h3>
             <div className="space-y-3">
               <div className="flex gap-2.5 items-start">
-                <MapPin className="w-4 h-4 text-brand shrink-0 mt-0.5" aria-hidden="true" />
+                <MapPin
+                  className="w-4 h-4 text-brand shrink-0 mt-0.5"
+                  aria-hidden="true"
+                />
                 <p className="text-sm">
                   {ADDRESS_LINE}
                   <br />
@@ -103,11 +106,17 @@ export default function Footer() {
                 </p>
               </div>
               <div className="flex gap-2.5 items-center">
-                <Clock className="w-4 h-4 text-brand shrink-0" aria-hidden="true" />
+                <Clock
+                  className="w-4 h-4 text-brand shrink-0"
+                  aria-hidden="true"
+                />
                 <p className="text-sm">{HOURS_SHORT}</p>
               </div>
               <div className="flex gap-2.5 items-center">
-                <Phone className="w-4 h-4 text-brand shrink-0" aria-hidden="true" />
+                <Phone
+                  className="w-4 h-4 text-brand shrink-0"
+                  aria-hidden="true"
+                />
                 <a
                   href={`tel:${PHONE_TEL}`}
                   className="text-sm hover:text-white transition-colors"

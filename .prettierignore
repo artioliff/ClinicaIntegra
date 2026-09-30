@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+build/
+dist/
+package-lock.json
+public/images/
+src/assets/
+*.png
+*.webp
+*.jpg
+*.jpeg
