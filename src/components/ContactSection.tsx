@@ -14,7 +14,6 @@ const services = [
 
 export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -23,21 +22,27 @@ export default function ContactSection() {
     message: "",
   });
 
-  async function handleSubmit(e: FormEvent) {
+  function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    setLoading(true);
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (res.ok) {
-        setSubmitted(true);
-      }
-    } finally {
-      setLoading(false);
+    if (!form.name.trim() || !form.phone.trim()) return;
+
+    const messageParts = [
+      "Olá! Gostaria de agendar uma consulta na Íntegra Odontologia.",
+      "",
+      `*Nome:* ${form.name.trim()}`,
+      `*Telefone:* ${form.phone.trim()}`,
+    ];
+    if (form.email.trim()) messageParts.push(`*E-mail:* ${form.email.trim()}`);
+    if (form.service) messageParts.push(`*Tratamento:* ${form.service}`);
+    if (form.message.trim()) {
+      const truncated = form.message.trim().slice(0, 300);
+      messageParts.push(`*Mensagem:* ${truncated}`);
     }
+
+    const text = encodeURIComponent(messageParts.join("\n"));
+    const url = `https://wa.me/551499697025?text=${text}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+    setSubmitted(true);
   }
 
   return (
@@ -143,11 +148,10 @@ export default function ContactSection() {
               <div className="flex flex-col items-center justify-center h-full gap-4 py-16 text-center">
                 <CheckCircle2 className="w-16 h-16 text-[#9E6162]" />
                 <h3 className="text-2xl font-bold text-[#2d1a1a]">
-                  Mensagem enviada!
+                  Abrindo WhatsApp...
                 </h3>
                 <p className="text-[#5a4040] max-w-sm">
-                  Obrigada pelo contato! Entraremos em breve para confirmar seu
-                  agendamento. 🦷
+                  Você será redirecionado para o WhatsApp com sua mensagem preenchida. Se não abrir automaticamente, verifique o bloqueador de pop-ups. 🦷
                 </p>
                 <button
                   onClick={() => {
@@ -243,10 +247,9 @@ export default function ContactSection() {
 
                 <button
                   type="submit"
-                  disabled={loading}
-                  className="w-full bg-[#9E6162] text-white font-semibold py-3 rounded-full hover:bg-[#5e2828] transition-colors disabled:opacity-60 shadow-lg shadow-[#9E6162]/20"
+                  className="w-full bg-[#9E6162] text-white font-semibold py-3 rounded-full hover:bg-[#5e2828] transition-colors shadow-lg shadow-[#9E6162]/20"
                 >
-                  {loading ? "Enviando..." : "Solicitar Agendamento"}
+                  Solicitar Agendamento
                 </button>
 
                 <p className="text-xs text-[#8a6060] text-center">

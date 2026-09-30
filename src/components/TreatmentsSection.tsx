@@ -45,7 +45,7 @@ const treatments = [
   },
 ];
 
-const categories = ["Todos", "Estética", "Ortodontia", "Implantodontia", "Endodontia", "Preventiva"];
+const categories = ["Todos", "Estética", "Implantodontia", "Endodontia", "Preventiva"];
 
 export default function TreatmentsSection() {
   const [active, setActive] = useState("Todos");
