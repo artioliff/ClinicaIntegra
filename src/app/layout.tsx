@@ -97,6 +97,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <a
+          href="#conteudo"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-brand focus:text-white focus:px-5 focus:py-3 focus:rounded-full focus:font-semibold focus:shadow-lg"
+        >
+          Pular para o conteúdo
+        </a>
         {children}
       </body>
     </html>

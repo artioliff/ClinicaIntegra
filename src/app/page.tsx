@@ -12,7 +12,7 @@ import WhatsAppFab from "@/components/WhatsAppFab";
 
 export default function HomePage() {
   return (
-    <main>
+    <main id="conteudo">
       <TopBar />
       <Navbar />
       <HeroSection />

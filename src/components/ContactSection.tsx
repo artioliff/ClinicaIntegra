@@ -156,7 +156,10 @@ export default function ContactSection() {
           {/* Form */}
           <div>
             {submitted ? (
-              <div className="flex flex-col items-center justify-center h-full gap-4 py-16 text-center">
+              <div
+                role="status"
+                className="flex flex-col items-center justify-center h-full gap-4 py-16 text-center"
+              >
                 <CheckCircle2 className="w-16 h-16 text-brand" />
                 <h3 className="text-2xl font-bold text-ink">
                   Abrindo WhatsApp...
@@ -164,7 +167,7 @@ export default function ContactSection() {
                 <p className="text-body max-w-sm">
                   Você será redirecionado para o WhatsApp com sua mensagem
                   preenchida. Se não abrir automaticamente, verifique o
-                  bloqueador de pop-ups. 🦷
+                  bloqueador de pop-ups. <span aria-hidden="true">🦷</span>
                 </p>
                 <button
                   type="button"

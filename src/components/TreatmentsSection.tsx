@@ -75,7 +75,9 @@ export default function TreatmentsSection() {
           {categories.map((cat) => (
             <button
               key={cat}
+              type="button"
               onClick={() => setActive(cat)}
+              aria-pressed={active === cat}
               className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
                 active === cat
                   ? "bg-brand text-white shadow-md"
@@ -88,13 +90,18 @@ export default function TreatmentsSection() {
         </div>
 
         {/* Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          aria-live="polite"
+        >
           {filtered.map((t) => (
             <div
               key={t.title}
               className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow border border-rose-50 group"
             >
-              <div className="text-3xl mb-4">{t.emoji}</div>
+              <div className="text-3xl mb-4" aria-hidden="true">
+                {t.emoji}
+              </div>
               <span className="inline-block text-xs font-semibold text-brand bg-rose-50 px-2.5 py-0.5 rounded-full mb-2">
                 {t.category}
               </span>

@@ -14,6 +14,16 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Fecha o menu com Esc (teclado)
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
   return (
     <header
       className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${
@@ -23,14 +33,19 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         {/* Logo */}
         <a href="#inicio" className="flex items-center gap-2 shrink-0">
-          <span className="text-brand text-2xl">✦</span>
+          <span className="text-brand text-2xl" aria-hidden="true">
+            ✦
+          </span>
           <span className="text-xl font-semibold text-ink-soft font-display">
             Íntegra Odontologia
           </span>
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-body">
+        <nav
+          aria-label="Navegação principal"
+          className="hidden lg:flex items-center gap-6 text-sm font-medium text-body"
+        >
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
@@ -53,17 +68,23 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
+          type="button"
           className="lg:hidden text-brand"
           onClick={() => setOpen(!open)}
-          aria-label="Menu"
+          aria-label={open ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={open}
+          aria-controls="menu-mobile"
         >
-          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {open ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
         </button>
       </div>
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden bg-white border-t border-rose-100 px-4 py-4 flex flex-col gap-3">
+        <div
+          id="menu-mobile"
+          className="lg:hidden bg-white border-t border-rose-100 px-4 py-4 flex flex-col gap-3"
+        >
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}

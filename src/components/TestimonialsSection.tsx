@@ -81,11 +81,12 @@ export default function TestimonialsSection() {
               className="bg-card-dark rounded-2xl p-6 flex flex-col gap-4"
             >
               {/* Stars */}
-              <div className="flex gap-0.5">
+              <div className="flex gap-0.5" aria-hidden="true">
                 {Array.from({ length: t.rating }).map((_, j) => (
                   <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
+              <span className="sr-only">{t.rating} de 5 estrelas</span>
               <p className="text-quote text-sm leading-relaxed flex-1">
                 &ldquo;{t.text}&rdquo;
               </p>
@@ -105,27 +106,35 @@ export default function TestimonialsSection() {
         {/* Controls */}
         <div className="flex justify-center gap-3">
           <button
+            type="button"
             onClick={prev}
             className="w-10 h-10 rounded-full border border-line-dark text-brand-soft hover:bg-brand hover:text-white hover:border-brand transition-all flex items-center justify-center"
             aria-label="Anterior"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
-          <div className="flex gap-1.5 items-center">
+          <div className="flex items-center">
             {testimonials.map((_, i) => (
               <button
                 key={i}
+                type="button"
                 onClick={() => setCurrent(i)}
-                className={`rounded-full transition-all ${
-                  i === current
-                    ? "w-6 h-2 bg-brand-soft"
-                    : "w-2 h-2 bg-line-dark hover:bg-brand"
-                }`}
-                aria-label={`Depoimento ${i + 1}`}
-              />
+                aria-label={`Ir para o depoimento ${i + 1}`}
+                aria-current={i === current ? "true" : undefined}
+                className="w-6 h-6 flex items-center justify-center rounded-full"
+              >
+                <span
+                  className={`block rounded-full transition-all ${
+                    i === current
+                      ? "w-6 h-2 bg-brand-soft"
+                      : "w-2 h-2 bg-line-dark"
+                  }`}
+                />
+              </button>
             ))}
           </div>
           <button
+            type="button"
             onClick={next}
             className="w-10 h-10 rounded-full border border-line-dark text-brand-soft hover:bg-brand hover:text-white hover:border-brand transition-all flex items-center justify-center"
             aria-label="Próximo"
