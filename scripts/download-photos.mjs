@@ -8,6 +8,7 @@
  * Licença Pexels: uso comercial livre, sem atribuição obrigatória.
  *
  * Troque estas fotos pelas fotos reais da clínica assim que estiverem disponíveis.
+ * As fotos da equipe não estão aqui: são recortadas dos criativos pelo `npm run team`.
  */
 import { mkdirSync } from "node:fs";
 import sharp from "sharp";
@@ -25,7 +26,6 @@ const PHOTOS = [
   { id: "19879741", w: 400, h: 400, out: "sorriso-b" },
   { id: "19976560", w: 400, h: 400, out: "sorriso-c" },
   { id: "19879740", w: 400, h: 400, out: "sorriso-d" },
-  { id: "6627407", w: 500, h: 600, out: "equipe-ortodontia" }, // card da Dra. Ana Carolina
 ];
 
 mkdirSync("public/images", { recursive: true });

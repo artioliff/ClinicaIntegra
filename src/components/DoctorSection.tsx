@@ -1,21 +1,19 @@
 import { BadgeCheck } from "lucide-react";
 import Image from "next/image";
-import karitaImg from "../assets/img/karita.jpg";
-import lilianImg from "../assets/img/lilian.jpg";
-import marcelaImg from "../assets/img/marcela.jpg";
 import { CRO_PLACEHOLDER, waLink } from "@/config/site";
 
 /**
  * ⚠️ PLACEHOLDER — confirmar com a cliente antes de publicar: sobrenomes,
  * CROs (obrigatório na publicidade odontológica), especialidades e biografias.
- * As fotos são as reais da equipe.
+ * As fotos são as reais da equipe: recorte do retrato dos criativos 9:16,
+ * gerado por `npm run team` (scripts/optimize-team.mjs) em public/images/.
  */
 const doctors = [
   {
     name: "Dra. Karita Pomponi",
     cro: CRO_PLACEHOLDER, // ⚠️ trocar pelo CRO real
     specialty: "Cirurgiã-Dentista · Especialista em Implantodontia",
-    image: karitaImg,
+    image: "/images/equipe-karita.webp",
     description1:
       "Atua com implantes dentários e reabilitação oral, devolvendo função e estética aos pacientes.",
     description2:
@@ -27,10 +25,10 @@ const doctors = [
     ],
   },
   {
-    name: "Dra. Marcela Souza",
+    name: "Dra. Marcela Almeida", // ⚠️ confirmar: legenda dos criativos dela diz "Almeida"; o template dizia "Souza"
     cro: CRO_PLACEHOLDER, // ⚠️ trocar pelo CRO real
     specialty: "Cirurgiã-Dentista · Especialista em Odontologia Estética",
-    image: marcelaImg,
+    image: "/images/equipe-marcela.webp",
     description1:
       "Com mais de 10 anos de experiência, a Dra. Marcela construiu uma carreira pautada na excelência técnica e no atendimento humanizado.",
     description2:
@@ -45,7 +43,7 @@ const doctors = [
     name: "Dra. Lilian", // ⚠️ sobrenome a confirmar
     cro: CRO_PLACEHOLDER, // ⚠️ trocar pelo CRO real
     specialty: "Especialista em Ortodontia",
-    image: lilianImg,
+    image: "/images/equipe-lilian.webp",
     description1:
       "Especialista em alinhadores invisíveis e tratamentos ortodônticos personalizados.",
     description2: "Busca sempre proporcionar conforto e excelência clínica.",
@@ -83,7 +81,8 @@ export default function DoctorSection() {
               <Image
                 src={doctor.image}
                 alt={`Foto de ${doctor.name}`}
-                sizes="(min-width: 1280px) 405px, (min-width: 768px) 50vw, 100vw"
+                width={800}
+                height={656}
                 className="w-full h-80 object-cover object-top"
               />
 

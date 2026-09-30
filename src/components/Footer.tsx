@@ -134,7 +134,7 @@ export default function Footer() {
             reservados.
           </p>
           <p className="text-xs">
-            {CRO_PLACEHOLDER} · Dra. Marcela Souza – Cirurgiã-Dentista
+            {CRO_PLACEHOLDER} · Dra. Marcela Almeida – Cirurgiã-Dentista
           </p>
         </div>
 

@@ -119,7 +119,9 @@ export default function HeroSection() {
                 <span className="text-brand font-bold text-sm">MS</span>
               </div>
               <div>
-                <p className="font-bold text-ink text-sm">Dra. Marcela Souza</p>
+                <p className="font-bold text-ink text-sm">
+                  Dra. Marcela Almeida
+                </p>
                 <p className="text-xs text-brand">
                   Cirurgiã-Dentista · Íntegra Odontologia
                 </p>

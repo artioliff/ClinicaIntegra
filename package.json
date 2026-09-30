@@ -12,7 +12,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "images": "node scripts/generate-images.mjs",
-    "photos": "node scripts/download-photos.mjs"
+    "photos": "node scripts/download-photos.mjs",
+    "team": "node scripts/optimize-team.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.31.0",
