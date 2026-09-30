@@ -3,6 +3,7 @@ import Link from "next/link";
 import {
   ADDRESS_CITY,
   ADDRESS_LINE,
+  COPYRIGHT_YEAR,
   CRO_PLACEHOLDER,
   HOURS_SHORT,
   INSTAGRAM_URL,
@@ -130,7 +131,7 @@ export default function Footer() {
 
         <div className="border-t border-card-dark pt-6 flex flex-col sm:flex-row items-center justify-end gap-2">
           <p className="text-xs">
-            © {new Date().getFullYear()} Íntegra Odontologia – Todos os direitos
+            © {COPYRIGHT_YEAR} Íntegra Odontologia – Todos os direitos
             reservados.
           </p>
           <p className="text-xs">

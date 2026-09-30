@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import {
   ADDRESS_CITY,
   ADDRESS_LINE,
+  LAST_UPDATED,
   PHONE_DISPLAY,
   PHONE_TEL,
   SITE,
@@ -98,8 +99,8 @@ export default function PrivacidadePage() {
           Política de Privacidade
         </h1>
         <p className="text-sm text-muted mb-10">
-          Última atualização: {new Date().toLocaleDateString("pt-BR")} · Em
-          conformidade com a Lei Geral de Proteção de Dados (Lei 13.709/2018).
+          Última atualização: {LAST_UPDATED} · Em conformidade com a Lei Geral
+          de Proteção de Dados (Lei 13.709/2018).
         </p>
 
         <div className="space-y-8">

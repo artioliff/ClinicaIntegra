@@ -112,6 +112,16 @@ export const CRO_PLACEHOLDER = "CRO-SP 123456";
 /** Política de privacidade (LGPD) — usada no rodapé e no formulário. */
 export const PRIVACY_PATH = "/privacidade/";
 
+/**
+ * Datas explícitas em vez de `new Date()` no render.
+ *
+ * O site é estático: a data calculada em runtime seria congelada na build e,
+ * no cliente, recalculada — gerando hydration mismatch e uma data visivelmente
+ * antiga. Atualize as constantes quando o conteúdo mudar.
+ */
+export const LAST_UPDATED = "30/09/2026";
+export const COPYRIGHT_YEAR = 2026;
+
 export const SITE = {
   name: "Íntegra Odontologia",
   tagline: "Odontologia com Excelência em Bauru",
