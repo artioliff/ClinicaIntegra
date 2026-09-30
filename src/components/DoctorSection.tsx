@@ -1,19 +1,21 @@
 import { BadgeCheck } from "lucide-react";
 import Image from "next/image";
-import img1 from "../assets/img/Dra Karite Pomponi.jpeg";
+import karitaImg from "../assets/img/karita.jpg";
+import lilianImg from "../assets/img/lilian.jpg";
+import marcelaImg from "../assets/img/marcela.jpg";
 import { CRO_PLACEHOLDER, waLink } from "@/config/site";
 
 /**
- * ⚠️ PLACEHOLDER — SUBSTITUIR pelos dados reais de cada profissional:
- * nomes, CROs (obrigatório na publicidade), especialidades e fotos.
- * As fotos das duas últimas profissionais são de banco de imagens.
+ * ⚠️ PLACEHOLDER — confirmar com a cliente antes de publicar: sobrenomes,
+ * CROs (obrigatório na publicidade odontológica), especialidades e biografias.
+ * As fotos são as reais da equipe.
  */
 const doctors = [
   {
     name: "Dra. Karita Pomponi",
     cro: CRO_PLACEHOLDER, // ⚠️ trocar pelo CRO real
     specialty: "Cirurgiã-Dentista · Especialista em Implantodontia",
-    image: img1,
+    image: karitaImg,
     description1:
       "Atua com implantes dentários e reabilitação oral, devolvendo função e estética aos pacientes.",
     description2:
@@ -28,7 +30,7 @@ const doctors = [
     name: "Dra. Marcela Souza",
     cro: CRO_PLACEHOLDER, // ⚠️ trocar pelo CRO real
     specialty: "Cirurgiã-Dentista · Especialista em Odontologia Estética",
-    image: "/images/atendimento-dentista.webp",
+    image: marcelaImg,
     description1:
       "Com mais de 10 anos de experiência, a Dra. Marcela construiu uma carreira pautada na excelência técnica e no atendimento humanizado.",
     description2:
@@ -40,10 +42,10 @@ const doctors = [
     ],
   },
   {
-    name: "Dra. Ana Carolina",
+    name: "Dra. Lilian", // ⚠️ sobrenome a confirmar
     cro: CRO_PLACEHOLDER, // ⚠️ trocar pelo CRO real
     specialty: "Especialista em Ortodontia",
-    image: "/images/equipe-ortodontia.webp",
+    image: lilianImg,
     description1:
       "Especialista em alinhadores invisíveis e tratamentos ortodônticos personalizados.",
     description2: "Busca sempre proporcionar conforto e excelência clínica.",
@@ -81,10 +83,8 @@ export default function DoctorSection() {
               <Image
                 src={doctor.image}
                 alt={`Foto de ${doctor.name}`}
-                width={500}
-                height={600}
                 sizes="(min-width: 1280px) 405px, (min-width: 768px) 50vw, 100vw"
-                className="w-full h-80 object-cover"
+                className="w-full h-80 object-cover object-top"
               />
 
               <div className="p-6">
