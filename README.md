@@ -61,7 +61,8 @@ src/
   WhatsApp/endereço inline nos componentes.
 - âncoras: `scroll-padding-top` no `html` compensa o header sticky.
 - imagens: sempre `next/image` (local em `public/images/`), com `width`/`height`;
-  `priority` apenas no LCP do hero.
+  `priority` apenas no LCP do hero. Fotos da equipe saem dos criativos 9:16 via
+  `npm run team` (as fontes 9:16 ficam em `src/assets/img/`).
 - cores: usar os tokens `@theme` de `globals.css` (`text-brand`, `bg-ink`…), não hex literal.
 - links externos: `target="_blank"` sempre com `rel="noopener noreferrer"`.
 - rodar `npm run format` antes de commitar (o CI valida a formatação).
@@ -83,17 +84,72 @@ CI: `.github/workflows/ci.yml` roda os cinco passos em cada push/PR.
 
 ## Antes de publicar (pendências que o código não resolve sozinho)
 
-- [ ] **Domínio** — definir `NEXT_PUBLIC_SITE_URL` no `.env.local`/hospedagem
-      (sem isso, sitemap e canonical usam `localhost`)
+- [ ] **Domínio** — hoje o site vive em `https://<nome>.onrender.com` e
+      `NEXT_PUBLIC_SITE_URL` aponta para lá; ao comprar domínio, atualizar a
+      variável no Render + **Clear build cache & deploy**
 - [ ] **Logo/favicon reais** — o atual é um ✦ gerado por `npm run images`
 - [ ] **CROs reais** — `CRO_PLACEHOLDER` em `src/config/site.ts` (obrigatório
       na publicidade odontológica)
-- [ ] **Nomes, bios e fotos da equipe** — hoje são placeholders com foto de banco de imagens
+- [ ] **Nomes da equipe** — fotos já são as reais; faltam sobrenome da
+      Dra. Lilian e confirmação de "Dra. Marcela Almeida" (as legendas dos
+      criativos dizem Almeida; o template dizia Souza)
 - [ ] **Depoimentos reais** — os atuais são fictícios (vedado pelo CDC/CONAR)
 - [ ] **Nota 4.9 do Google** — confirmar no Google Meu Negócio e usar o link
       permanente (hoje `GOOGLE_MAPS_SEARCH` faz uma busca)
 - [ ] **Fotos reais** da clínica e antes/depois (as atuais vêm do Pexels)
 - [ ] **Endereço exato** para o embed do mapa (hoje busca pelo endereço)
+
+## Publicação no Render (Static Site)
+
+O build usa `output: "export"` (`next.config.ts`) e gera a pasta `out/` — site 100%
+estático, publicado como **Static Site** no Render: CDN global, HTTPS automático,
+sem cold start e sem servidor para manter.
+
+### 1. Criar o site
+
+| Campo             | Valor                     |
+| ----------------- | ------------------------- |
+| Type              | **Static Site**           |
+| Build Command     | `npm ci && npm run build` |
+| Publish Directory | `out`                     |
+| Branch            | `master`                  |
+
+### 2. Variável de ambiente (antes do primeiro deploy)
+
+| Name                   | Value                         |
+| ---------------------- | ----------------------------- |
+| `NEXT_PUBLIC_SITE_URL` | `https://<nome>.onrender.com` |
+
+A URL é **embutida na build**: alimenta canonical, Open Graph/Twitter, JSON-LD e
+sitemap. Sem ela o site sai com `localhost`. Se mudar depois, clique em
+**Clear build cache & deploy**.
+
+### 3. Headers de segurança (Settings → HTTP Headers, path `/`)
+
+Em export não existe servidor, então os headers saem do `next.config.ts` e ficam
+no painel (foram removidos do arquivo junto com a migração):
+
+| Header                      | Valor                                      |
+| --------------------------- | ------------------------------------------ |
+| `X-Frame-Options`           | `SAMEORIGIN`                               |
+| `X-Content-Type-Options`    | `nosniff`                                  |
+| `Referrer-Policy`           | `strict-origin-when-cross-origin`          |
+| `Permissions-Policy`        | `camera=(), microphone=(), geolocation=()` |
+| `Strict-Transport-Security` | `max-age=31536000; includeSubDomains`      |
+
+### 4. Verificar
+
+```bash
+# headers + status
+curl -I https://<nome>.onrender.com/
+curl -I https://<nome>.onrender.com/privacidade/
+
+# URL correta embutida (não pode aparecer localhost)
+curl -s https://<nome>.onrender.com/sitemap.xml | grep '<loc>'
+curl -s https://<nome>.onrender.com/ | grep -o '<link rel="canonical"[^>]*>'
+```
+
+Antes de subir, dá para conferir o build localmente: `npm run build && npx serve out`.
 
 ## Roadmap
 
@@ -104,4 +160,5 @@ CI: `.github/workflows/ci.yml` roda os cinco passos em cada push/PR.
 - [x] Fase 4 — Acessibilidade: skip link, aria-*, alvos de toque, foco visível
 - [x] Fase 5 — Legal: LGPD, consentimento, números não verificáveis removidos
 - [x] Fase 6 — Qualidade: Prettier, Vitest, CI, upgrade do Next (0 CVEs)
+- [x] Fase 7 — Deploy: `output: "export"` para o Render Static Site
 - [ ] Publicação: domínio, conteúdo real e Google Meu Negócio (checklist acima)

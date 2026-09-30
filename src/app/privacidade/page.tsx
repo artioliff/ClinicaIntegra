@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: `Política de Privacidade – ${SITE.name}`,
   description:
     "Como a Íntegra Odontologia trata seus dados pessoais, em conformidade com a LGPD (Lei 13.709/2018).",
-  alternates: { canonical: "/privacidade" },
+  alternates: { canonical: "/privacidade/" },
   robots: { index: true, follow: true },
 };
 

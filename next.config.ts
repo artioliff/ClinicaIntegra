@@ -12,6 +12,9 @@ import type { NextConfig } from "next";
  */
 const nextConfig: NextConfig = {
   output: "export",
+  // Gera `privacidade/index.html` em vez de `privacidade.html`: qualquer
+  // servidor estático (Render) serve `/privacidade/` por diretório.
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },

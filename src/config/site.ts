@@ -110,7 +110,7 @@ export const CRO_PLACEHOLDER = "CRO-SP 123456";
 /* ------------------------------------------------------------------ site */
 
 /** Política de privacidade (LGPD) — usada no rodapé e no formulário. */
-export const PRIVACY_PATH = "/privacidade";
+export const PRIVACY_PATH = "/privacidade/";
 
 export const SITE = {
   name: "Íntegra Odontologia",
@@ -122,9 +122,12 @@ export const SITE = {
  * URL base do site (canonical, Open Graph e sitemap).
  *
  * Ordem de resolução:
- * 1. NEXT_PUBLIC_SITE_URL      — definir no .env.local / na hospedagem
- * 2. VERCEL_PROJECT_PRODUCTION_URL / VERCEL_URL — automático na Vercel
- * 3. localhost — apenas desenvolvimento
+ * 1. NEXT_PUBLIC_SITE_URL      — definir no .env.local e no painel do Render
+ * 2. VERCEL_PROJECT_PRODUCTION_URL / VERCEL_URL — fallback em outras hospedagens
+ * 3. localhost — apenas desenvolvimento (NÃO vale publicar sem o item 1)
+ *
+ * A URL é embutida na build: trocar depois exige "Clear build cache & deploy"
+ * no Render.
  */
 function resolveSiteUrl(): string {
   const raw =
