@@ -104,3 +104,23 @@ export const SITE = {
   tagline: "Odontologia com Excelência em Bauru",
   city: "Bauru/SP",
 } as const;
+
+/**
+ * URL base do site (canonical, Open Graph e sitemap).
+ *
+ * Ordem de resolução:
+ * 1. NEXT_PUBLIC_SITE_URL      — definir no .env.local / na hospedagem
+ * 2. VERCEL_PROJECT_PRODUCTION_URL / VERCEL_URL — automático na Vercel
+ * 3. localhost — apenas desenvolvimento
+ */
+function resolveSiteUrl(): string {
+  const raw =
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    process.env.VERCEL_PROJECT_PRODUCTION_URL ??
+    process.env.VERCEL_URL ??
+    "http://localhost:3000";
+  const withProtocol = /^https?:\/\//.test(raw) ? raw : `https://${raw}`;
+  return withProtocol.replace(/\/+$/, "");
+}
+
+export const SITE_URL = resolveSiteUrl();

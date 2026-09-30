@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { GOOGLE_MAPS_SEARCH } from "@/config/site";
 
 const testimonials = [
   {
@@ -135,13 +136,22 @@ export default function TestimonialsSection() {
 
         {/* Google rating */}
         <div className="mt-10 flex justify-center">
-          <div className="bg-[#3d2020] rounded-2xl px-6 py-4 flex items-center gap-4">
-            <div className="text-4xl">⭐</div>
+          <a
+            href={GOOGLE_MAPS_SEARCH}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#3d2020] rounded-2xl px-6 py-4 flex items-center gap-4 hover:bg-[#4d2a2a] transition-colors"
+          >
+            <div className="text-4xl" aria-hidden="true">
+              ⭐
+            </div>
             <div>
               <p className="text-white font-bold text-xl">4.9 / 5.0</p>
-              <p className="text-[#c4a0a0] text-xs">Nota no Google · +300 avaliações</p>
+              <p className="text-[#c4a0a0] text-xs">
+                No Google · ver avaliações
+              </p>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
