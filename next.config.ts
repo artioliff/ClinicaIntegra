@@ -15,10 +15,13 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  output: "export",
+
   images: {
-    // AVIF/WebP para as imagens servidas pelo otimizador do Next
+    unoptimized: true,
     formats: ["image/avif", "image/webp"],
   },
+
   async headers() {
     return [{ source: "/(.*)", headers: securityHeaders }];
   },
