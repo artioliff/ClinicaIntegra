@@ -2,16 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X, CalendarDays } from "lucide-react";
-
-const navLinks = [
-  { label: "Início", href: "#inicio" },
-  { label: "A Clínica", href: "#clinica" },
-  { label: "Tratamentos", href: "#tratamentos" },
-  { label: "Resultados", href: "#resultados" },
-  { label: "Colaboradores", href: "#colaboradores" },
-  { label: "Depoimentos", href: "#depoimentos" },
-  { label: "Contato", href: "#contato" },
-];
+import { NAV_LINKS } from "@/config/site";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -19,7 +10,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -43,7 +34,7 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-[#5a4040]">
-          {navLinks.map((link) => (
+          {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -76,7 +67,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       {open && (
         <div className="lg:hidden bg-white border-t border-rose-100 px-4 py-4 flex flex-col gap-3">
-          {navLinks.map((link) => (
+          {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}

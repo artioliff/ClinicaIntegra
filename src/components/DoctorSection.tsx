@@ -1,5 +1,6 @@
 import { BadgeCheck } from "lucide-react";
 import img1 from "../assets/img/Dra Karite Pomponi.jpeg";
+import { waLink } from "@/config/site";
 
 const doctors = [
   {
@@ -105,7 +106,7 @@ export default function DoctorSection() {
       </div>
 
       <a
-        href="https://wa.me/551499697025"
+        href={waLink()}
         target="_blank"
         rel="noopener noreferrer"
         className="block text-center bg-[#9E6162] text-white font-semibold py-3 rounded-full hover:bg-[#5e2828] transition-colors"
