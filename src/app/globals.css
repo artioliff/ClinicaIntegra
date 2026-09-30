@@ -1,5 +1,35 @@
 @import "tailwindcss";
 
+/* ------------------------------------------------------------------ tema
+   Paleta da clínica em tokens: use `text-brand`, `bg-surface`... nos
+   componentes nunca escreva hex literal — acrescente o token aqui.     */
+@theme {
+  --color-brand: #9e6162;
+  --color-brand-dark: #5e2828;
+  --color-brand-light: #a05c5c;
+  --color-brand-soft: #c4a0a0;
+  --color-accent: #c47c5a;
+
+  --color-ink: #2d1a1a;
+  --color-ink-soft: #4a2020;
+  --color-ink-deep: #1a0f0f;
+  --color-body: #5a4040;
+  --color-muted: #8a6060;
+
+  --color-surface: #f9f0f0;
+  --color-surface-alt: #fdf5f0;
+  --color-surface-warm: #f5e8e0;
+  --color-peach: #e8c4b8;
+  --color-blush: #d4a0a0;
+
+  --color-card-dark: #3d2020;
+  --color-line-dark: #5a3535;
+  --color-quote: #e8d0c8;
+
+  --color-whatsapp: #25d366;
+  --color-whatsapp-dark: #1da851;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -20,5 +50,13 @@
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
+  }
+}
+
+@layer components {
+  /* Serifada itálica do logotipo — Georgia é do sistema, não baixa nada. */
+  .font-display {
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
   }
 }

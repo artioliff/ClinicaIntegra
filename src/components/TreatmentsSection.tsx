@@ -54,17 +54,17 @@ export default function TreatmentsSection() {
     active === "Todos" ? treatments : treatments.filter((t) => t.category === active);
 
   return (
-    <section id="tratamentos" className="py-20 bg-[#f9f0f0]">
+    <section id="tratamentos" className="py-20 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <div className="text-center mb-10">
-          <span className="inline-block bg-white text-[#9E6162] text-xs font-semibold px-4 py-1.5 rounded-full mb-4 border border-rose-200">
+          <span className="inline-block bg-white text-brand text-xs font-semibold px-4 py-1.5 rounded-full mb-4 border border-rose-200">
             Tratamentos
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#2d1a1a] mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-ink mb-4">
             Cuidados completos para o seu sorriso
           </h2>
-          <p className="text-[#5a4040] max-w-xl mx-auto">
+          <p className="text-body max-w-xl mx-auto">
             Do preventivo ao estético, oferecemos uma gama completa de
             tratamentos com tecnologia de ponta e atendimento personalizado.
           </p>
@@ -78,8 +78,8 @@ export default function TreatmentsSection() {
               onClick={() => setActive(cat)}
               className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
                 active === cat
-                  ? "bg-[#9E6162] text-white shadow-md"
-                  : "bg-white text-[#9E6162] border border-rose-200 hover:bg-rose-50"
+                  ? "bg-brand text-white shadow-md"
+                  : "bg-white text-brand border border-rose-200 hover:bg-rose-50"
               }`}
             >
               {cat}
@@ -95,16 +95,16 @@ export default function TreatmentsSection() {
               className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow border border-rose-50 group"
             >
               <div className="text-3xl mb-4">{t.emoji}</div>
-              <span className="inline-block text-xs font-semibold text-[#9E6162] bg-rose-50 px-2.5 py-0.5 rounded-full mb-2">
+              <span className="inline-block text-xs font-semibold text-brand bg-rose-50 px-2.5 py-0.5 rounded-full mb-2">
                 {t.category}
               </span>
-              <h3 className="text-lg font-bold text-[#2d1a1a] mb-2">{t.title}</h3>
-              <p className="text-sm text-[#5a4040] mb-4 leading-relaxed">{t.description}</p>
+              <h3 className="text-lg font-bold text-ink mb-2">{t.title}</h3>
+              <p className="text-sm text-body mb-4 leading-relaxed">{t.description}</p>
               <div className="flex flex-wrap gap-2">
                 {t.benefits.map((b) => (
                   <span
                     key={b}
-                    className="text-xs bg-[#9E6162]/8 text-[#9E6162] px-2.5 py-0.5 rounded-full font-medium"
+                    className="text-xs bg-brand/8 text-brand px-2.5 py-0.5 rounded-full font-medium"
                   >
                     ✓ {b}
                   </span>
@@ -117,7 +117,7 @@ export default function TreatmentsSection() {
         <div className="text-center mt-10">
           <a
             href="#contato"
-            className="inline-flex items-center gap-2 bg-[#9E6162] text-white font-semibold px-8 py-3 rounded-full hover:bg-[#5e2828] transition-colors shadow-lg shadow-[#9E6162]/20"
+            className="inline-flex items-center gap-2 bg-brand text-white font-semibold px-8 py-3 rounded-full hover:bg-brand-dark transition-colors shadow-lg shadow-brand/20"
           >
             Quero saber qual tratamento é ideal para mim
           </a>

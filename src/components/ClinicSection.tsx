@@ -1,4 +1,25 @@
 import { ShieldCheck, Sparkles, Heart, Award } from "lucide-react";
+import Image from "next/image";
+
+/** Colagem do espaço físico — deslocamentos verticais criam o efeito quebrado. */
+const gallery = [
+  { src: "/images/clinica-recepcao.webp", alt: "Interior da clínica", offset: "" },
+  {
+    src: "/images/clinica-equipamentos.webp",
+    alt: "Equipamentos odontológicos",
+    offset: "mt-6",
+  },
+  {
+    src: "/images/clinica-sala.webp",
+    alt: "Sala de tratamento",
+    offset: "-mt-6",
+  },
+  {
+    src: "/images/clinica-instrumentos.webp",
+    alt: "Instrumentos odontológicos",
+    offset: "",
+  },
+];
 
 const pillars = [
   {
@@ -33,13 +54,13 @@ export default function ClinicSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="inline-block bg-rose-50 text-[#9E6162] text-xs font-semibold px-4 py-1.5 rounded-full mb-4">
+          <span className="inline-block bg-rose-50 text-brand text-xs font-semibold px-4 py-1.5 rounded-full mb-4">
             A Clínica
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#2d1a1a] mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-ink mb-4">
             Uma clínica pensada em cada detalhe
           </h2>
-          <p className="text-[#5a4040] max-w-2xl mx-auto">
+          <p className="text-body max-w-2xl mx-auto">
             A Íntegra Odontologia nasceu do desejo de oferecer tratamento
             odontológico de alto nível aliado a uma experiência verdadeiramente
             acolhedora, no coração de Bauru.
@@ -49,46 +70,37 @@ export default function ClinicSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Image collage */}
           <div className="grid grid-cols-2 gap-3">
-            <img
-              src="https://images.pexels.com/photos/5355920/pexels-photo-5355920.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400"
-              alt="Interior da clínica"
-              className="rounded-2xl w-full h-48 object-cover"
-            />
-            <img
-              src="https://images.pexels.com/photos/6629415/pexels-photo-6629415.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400"
-              alt="Equipamentos odontológicos"
-              className="rounded-2xl w-full h-48 object-cover mt-6"
-            />
-            <img
-              src="https://images.pexels.com/photos/5355858/pexels-photo-5355858.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400"
-              alt="Sala de tratamento"
-              className="rounded-2xl w-full h-48 object-cover -mt-6"
-            />
-            <img
-              src="https://images.pexels.com/photos/6629416/pexels-photo-6629416.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400"
-              alt="Instrumentos"
-              className="rounded-2xl w-full h-48 object-cover"
-            />
+            {gallery.map((photo) => (
+              <Image
+                key={photo.src}
+                src={photo.src}
+                alt={photo.alt}
+                width={400}
+                height={400}
+                sizes="(min-width: 1024px) 304px, (min-width: 640px) 45vw, 50vw"
+                className={`rounded-2xl w-full h-48 object-cover ${photo.offset}`}
+              />
+            ))}
           </div>
 
           {/* Text */}
           <div>
-            <h3 className="text-2xl font-bold text-[#2d1a1a] mb-4">
+            <h3 className="text-2xl font-bold text-ink mb-4">
               Onde estética encontra saúde bucal
             </h3>
-            <p className="text-[#5a4040] mb-4">
+            <p className="text-body mb-4">
               Localizada no centro de Bauru, a Clínica Íntegra foi projetada
               para ser um espaço acolhedor, moderno e funcional. Nossas salas de
               atendimento são equipadas com tecnologia de ponta para
               diagnósticos precisos e tratamentos eficientes.
             </p>
-            <p className="text-[#5a4040] mb-6">
+            <p className="text-body mb-6">
               Da recepção ao consultório, cada detalhe foi pensado para que
               você se sinta confortável e confiante desde o primeiro momento.
             </p>
             <a
               href="#contato"
-              className="inline-flex items-center gap-2 bg-[#9E6162] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#5e2828] transition-colors"
+              className="inline-flex items-center gap-2 bg-brand text-white font-semibold px-6 py-3 rounded-full hover:bg-brand-dark transition-colors"
             >
               Agende uma visita
             </a>
@@ -100,13 +112,13 @@ export default function ClinicSection() {
           {pillars.map(({ icon: Icon, title, description }) => (
             <div
               key={title}
-              className="bg-gradient-to-br from-[#fdf5f0] to-rose-50 border border-rose-100 rounded-2xl p-6 hover:shadow-md transition-shadow"
+              className="bg-gradient-to-br from-surface-alt to-rose-50 border border-rose-100 rounded-2xl p-6 hover:shadow-md transition-shadow"
             >
-              <div className="w-11 h-11 bg-[#9E6162]/10 rounded-xl flex items-center justify-center mb-4">
-                <Icon className="w-5 h-5 text-[#9E6162]" />
+              <div className="w-11 h-11 bg-brand/10 rounded-xl flex items-center justify-center mb-4">
+                <Icon className="w-5 h-5 text-brand" />
               </div>
-              <h4 className="font-bold text-[#2d1a1a] mb-2">{title}</h4>
-              <p className="text-sm text-[#5a4040] leading-relaxed">{description}</p>
+              <h4 className="font-bold text-ink mb-2">{title}</h4>
+              <p className="text-sm text-body leading-relaxed">{description}</p>
             </div>
           ))}
         </div>

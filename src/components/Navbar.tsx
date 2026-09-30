@@ -23,22 +23,19 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         {/* Logo */}
         <a href="#inicio" className="flex items-center gap-2 shrink-0">
-          <span className="text-[#9E6162] text-2xl">✦</span>
-          <span
-            className="text-xl font-semibold text-[#4a2020]"
-            style={{ fontFamily: "Georgia, serif", fontStyle: "italic" }}
-          >
+          <span className="text-brand text-2xl">✦</span>
+          <span className="text-xl font-semibold text-ink-soft font-display">
             Íntegra Odontologia
           </span>
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-[#5a4040]">
+        <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-body">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="hover:text-[#9E6162] transition-colors"
+              className="hover:text-brand transition-colors"
             >
               {link.label}
             </a>
@@ -48,7 +45,7 @@ export default function Navbar() {
         {/* CTA */}
         <a
           href="#contato"
-          className="hidden lg:flex items-center gap-2 bg-[#9E6162] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[#5e2828] transition-colors"
+          className="hidden lg:flex items-center gap-2 bg-brand text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors"
         >
           <CalendarDays className="w-4 h-4" />
           Agendar Consulta
@@ -56,7 +53,7 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden text-[#9E6162]"
+          className="lg:hidden text-brand"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
@@ -72,7 +69,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="text-sm font-medium text-[#5a4040] hover:text-[#9E6162] transition-colors py-1"
+              className="text-sm font-medium text-body hover:text-brand transition-colors py-1"
             >
               {link.label}
             </a>
@@ -80,7 +77,7 @@ export default function Navbar() {
           <a
             href="#contato"
             onClick={() => setOpen(false)}
-            className="flex items-center justify-center gap-2 bg-[#9E6162] text-white text-sm font-semibold px-5 py-2.5 rounded-full mt-2"
+            className="flex items-center justify-center gap-2 bg-brand text-white text-sm font-semibold px-5 py-2.5 rounded-full mt-2"
           >
             <CalendarDays className="w-4 h-4" />
             Agendar Consulta

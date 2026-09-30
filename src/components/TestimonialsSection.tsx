@@ -57,17 +57,17 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section id="depoimentos" className="py-20 bg-[#2d1a1a]">
+    <section id="depoimentos" className="py-20 bg-ink">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="inline-block bg-[#9E6162] text-rose-200 text-xs font-semibold px-4 py-1.5 rounded-full mb-4">
+          <span className="inline-block bg-brand text-rose-200 text-xs font-semibold px-4 py-1.5 rounded-full mb-4">
             Depoimentos
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             O que nossos pacientes falam
           </h2>
-          <p className="text-[#c4a0a0] max-w-xl mx-auto">
+          <p className="text-brand-soft max-w-xl mx-auto">
             Mais de 1.200 pacientes satisfeitos. Veja o que eles dizem sobre a
             experiência na Íntegra Odontologia.
           </p>
@@ -78,7 +78,7 @@ export default function TestimonialsSection() {
           {visible.map((t, i) => (
             <div
               key={`${t.name}-${i}`}
-              className="bg-[#3d2020] rounded-2xl p-6 flex flex-col gap-4"
+              className="bg-card-dark rounded-2xl p-6 flex flex-col gap-4"
             >
               {/* Stars */}
               <div className="flex gap-0.5">
@@ -86,16 +86,16 @@ export default function TestimonialsSection() {
                   <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <p className="text-[#e8d0c8] text-sm leading-relaxed flex-1">
+              <p className="text-quote text-sm leading-relaxed flex-1">
                 &ldquo;{t.text}&rdquo;
               </p>
-              <div className="flex items-center gap-3 pt-2 border-t border-[#5a3535]">
-                <div className="w-9 h-9 rounded-full bg-[#9E6162] flex items-center justify-center text-white text-xs font-bold shrink-0">
+              <div className="flex items-center gap-3 pt-2 border-t border-line-dark">
+                <div className="w-9 h-9 rounded-full bg-brand flex items-center justify-center text-white text-xs font-bold shrink-0">
                   {t.avatar}
                 </div>
                 <div>
                   <p className="text-white font-semibold text-sm">{t.name}</p>
-                  <p className="text-[#c4a0a0] text-xs">{t.treatment}</p>
+                  <p className="text-brand-soft text-xs">{t.treatment}</p>
                 </div>
               </div>
             </div>
@@ -106,7 +106,7 @@ export default function TestimonialsSection() {
         <div className="flex justify-center gap-3">
           <button
             onClick={prev}
-            className="w-10 h-10 rounded-full border border-[#5a3535] text-[#c4a0a0] hover:bg-[#9E6162] hover:text-white hover:border-[#9E6162] transition-all flex items-center justify-center"
+            className="w-10 h-10 rounded-full border border-line-dark text-brand-soft hover:bg-brand hover:text-white hover:border-brand transition-all flex items-center justify-center"
             aria-label="Anterior"
           >
             <ChevronLeft className="w-5 h-5" />
@@ -118,8 +118,8 @@ export default function TestimonialsSection() {
                 onClick={() => setCurrent(i)}
                 className={`rounded-full transition-all ${
                   i === current
-                    ? "w-6 h-2 bg-[#c4a0a0]"
-                    : "w-2 h-2 bg-[#5a3535] hover:bg-[#9E6162]"
+                    ? "w-6 h-2 bg-brand-soft"
+                    : "w-2 h-2 bg-line-dark hover:bg-brand"
                 }`}
                 aria-label={`Depoimento ${i + 1}`}
               />
@@ -127,7 +127,7 @@ export default function TestimonialsSection() {
           </div>
           <button
             onClick={next}
-            className="w-10 h-10 rounded-full border border-[#5a3535] text-[#c4a0a0] hover:bg-[#9E6162] hover:text-white hover:border-[#9E6162] transition-all flex items-center justify-center"
+            className="w-10 h-10 rounded-full border border-line-dark text-brand-soft hover:bg-brand hover:text-white hover:border-brand transition-all flex items-center justify-center"
             aria-label="Próximo"
           >
             <ChevronRight className="w-5 h-5" />
@@ -140,14 +140,14 @@ export default function TestimonialsSection() {
             href={GOOGLE_MAPS_SEARCH}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#3d2020] rounded-2xl px-6 py-4 flex items-center gap-4 hover:bg-[#4d2a2a] transition-colors"
+            className="bg-card-dark rounded-2xl px-6 py-4 flex items-center gap-4 hover:bg-brand-dark transition-colors"
           >
             <div className="text-4xl" aria-hidden="true">
               ⭐
             </div>
             <div>
               <p className="text-white font-bold text-xl">4.9 / 5.0</p>
-              <p className="text-[#c4a0a0] text-xs">
+              <p className="text-brand-soft text-xs">
                 No Google · ver avaliações
               </p>
             </div>

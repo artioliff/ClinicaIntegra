@@ -12,7 +12,7 @@ import { InstagramIcon } from "@/components/icons";
 
 export default function TopBar() {
   return (
-    <div className="bg-[#9E6162] text-white text-xs py-2 px-4">
+    <div className="bg-brand text-white text-xs py-2 px-4">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1">
         <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
           <span className="flex items-center gap-1.5">

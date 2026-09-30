@@ -52,13 +52,13 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="inline-block bg-rose-50 text-[#9E6162] text-xs font-semibold px-4 py-1.5 rounded-full mb-4">
+          <span className="inline-block bg-rose-50 text-brand text-xs font-semibold px-4 py-1.5 rounded-full mb-4">
             Contato
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#2d1a1a] mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-ink mb-4">
             Agende sua consulta
           </h2>
-          <p className="text-[#5a4040] max-w-xl mx-auto">
+          <p className="text-body max-w-xl mx-auto">
             Dê o primeiro passo para transformar o seu sorriso. Entre em
             contato e agende sua avaliação gratuita.
           </p>
@@ -67,18 +67,18 @@ export default function ContactSection() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Info */}
           <div>
-            <h3 className="text-xl font-bold text-[#2d1a1a] mb-6">
+            <h3 className="text-xl font-bold text-ink mb-6">
               Informações da clínica
             </h3>
 
             <div className="space-y-5 mb-8">
               <div className="flex gap-3 items-start">
                 <div className="w-10 h-10 rounded-xl bg-rose-50 flex items-center justify-center shrink-0">
-                  <MapPin className="w-5 h-5 text-[#9E6162]" aria-hidden="true" />
+                  <MapPin className="w-5 h-5 text-brand" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="font-semibold text-[#2d1a1a] text-sm">Endereço</p>
-                  <p className="text-[#5a4040] text-sm">
+                  <p className="font-semibold text-ink text-sm">Endereço</p>
+                  <p className="text-body text-sm">
                     {ADDRESS_LINE}
                     <br />
                     {ADDRESS_CITY}, {ADDRESS_CEP}
@@ -88,27 +88,27 @@ export default function ContactSection() {
 
               <div className="flex gap-3 items-start">
                 <div className="w-10 h-10 rounded-xl bg-rose-50 flex items-center justify-center shrink-0">
-                  <Clock className="w-5 h-5 text-[#9E6162]" aria-hidden="true" />
+                  <Clock className="w-5 h-5 text-brand" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="font-semibold text-[#2d1a1a] text-sm">
+                  <p className="font-semibold text-ink text-sm">
                     Horário de Atendimento
                   </p>
-                  <p className="text-[#5a4040] text-sm">{HOURS_LONG}</p>
+                  <p className="text-body text-sm">{HOURS_LONG}</p>
                 </div>
               </div>
 
               <div className="flex gap-3 items-start">
                 <div className="w-10 h-10 rounded-xl bg-rose-50 flex items-center justify-center shrink-0">
-                  <Phone className="w-5 h-5 text-[#9E6162]" aria-hidden="true" />
+                  <Phone className="w-5 h-5 text-brand" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="font-semibold text-[#2d1a1a] text-sm">
+                  <p className="font-semibold text-ink text-sm">
                     Telefone / WhatsApp
                   </p>
                   <a
                     href={`tel:${PHONE_TEL}`}
-                    className="text-[#9E6162] text-sm font-medium hover:underline"
+                    className="text-brand text-sm font-medium hover:underline"
                   >
                     {PHONE_DISPLAY}
                   </a>
@@ -122,7 +122,7 @@ export default function ContactSection() {
                 href={waLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-[#25d366] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#1da851] transition-colors"
+                className="inline-flex items-center gap-3 bg-whatsapp text-white font-semibold px-6 py-3 rounded-full hover:bg-whatsapp-dark transition-colors"
               >
                 <WhatsAppIcon className="w-5 h-5" />
                 Chamar no WhatsApp
@@ -131,7 +131,7 @@ export default function ContactSection() {
                 href={DIRECTIONS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-white border border-rose-200 text-[#9E6162] font-semibold px-6 py-3 rounded-full hover:bg-rose-50 transition-colors"
+                className="inline-flex items-center gap-2 bg-white border border-rose-200 text-brand font-semibold px-6 py-3 rounded-full hover:bg-rose-50 transition-colors"
               >
                 <Navigation className="w-4 h-4" aria-hidden="true" />
                 Como chegar
@@ -157,11 +157,11 @@ export default function ContactSection() {
           <div>
             {submitted ? (
               <div className="flex flex-col items-center justify-center h-full gap-4 py-16 text-center">
-                <CheckCircle2 className="w-16 h-16 text-[#9E6162]" />
-                <h3 className="text-2xl font-bold text-[#2d1a1a]">
+                <CheckCircle2 className="w-16 h-16 text-brand" />
+                <h3 className="text-2xl font-bold text-ink">
                   Abrindo WhatsApp...
                 </h3>
-                <p className="text-[#5a4040] max-w-sm">
+                <p className="text-body max-w-sm">
                   Você será redirecionado para o WhatsApp com sua mensagem
                   preenchida. Se não abrir automaticamente, verifique o
                   bloqueador de pop-ups. 🦷
@@ -178,7 +178,7 @@ export default function ContactSection() {
                       message: "",
                     });
                   }}
-                  className="mt-2 text-sm text-[#9E6162] underline"
+                  className="mt-2 text-sm text-brand underline"
                 >
                   Enviar outra mensagem
                 </button>
@@ -186,16 +186,16 @@ export default function ContactSection() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="bg-gradient-to-br from-[#fdf5f0] to-rose-50 rounded-2xl p-6 sm:p-8 space-y-4 border border-rose-100"
+                className="bg-gradient-to-br from-surface-alt to-rose-50 rounded-2xl p-6 sm:p-8 space-y-4 border border-rose-100"
               >
-                <h3 className="text-lg font-bold text-[#2d1a1a] mb-2">
+                <h3 className="text-lg font-bold text-ink mb-2">
                   Preencha seus dados
                 </h3>
 
                 <div>
                   <label
                     htmlFor="contact-name"
-                    className="block text-xs font-semibold text-[#5a4040] mb-1"
+                    className="block text-xs font-semibold text-body mb-1"
                   >
                     Nome completo *
                   </label>
@@ -208,7 +208,7 @@ export default function ContactSection() {
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     placeholder="Seu nome"
-                    className="w-full px-4 py-2.5 rounded-xl border border-rose-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#9E6162]/30 focus:border-[#9E6162]"
+                    className="w-full px-4 py-2.5 rounded-xl border border-rose-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand"
                   />
                 </div>
 
@@ -216,7 +216,7 @@ export default function ContactSection() {
                   <div>
                     <label
                       htmlFor="contact-phone"
-                      className="block text-xs font-semibold text-[#5a4040] mb-1"
+                      className="block text-xs font-semibold text-body mb-1"
                     >
                       Telefone / WhatsApp *
                     </label>
@@ -229,13 +229,13 @@ export default function ContactSection() {
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
                       placeholder="(14) 9 0000-0000"
-                      className="w-full px-4 py-2.5 rounded-xl border border-rose-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#9E6162]/30 focus:border-[#9E6162]"
+                      className="w-full px-4 py-2.5 rounded-xl border border-rose-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="contact-email"
-                      className="block text-xs font-semibold text-[#5a4040] mb-1"
+                      className="block text-xs font-semibold text-body mb-1"
                     >
                       E-mail
                     </label>
@@ -247,7 +247,7 @@ export default function ContactSection() {
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                       placeholder="seu@email.com"
-                      className="w-full px-4 py-2.5 rounded-xl border border-rose-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#9E6162]/30 focus:border-[#9E6162]"
+                      className="w-full px-4 py-2.5 rounded-xl border border-rose-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand"
                     />
                   </div>
                 </div>
@@ -255,7 +255,7 @@ export default function ContactSection() {
                 <div>
                   <label
                     htmlFor="contact-service"
-                    className="block text-xs font-semibold text-[#5a4040] mb-1"
+                    className="block text-xs font-semibold text-body mb-1"
                   >
                     Tratamento de interesse
                   </label>
@@ -264,7 +264,7 @@ export default function ContactSection() {
                     name="service"
                     value={form.service}
                     onChange={(e) => setForm({ ...form, service: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl border border-rose-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#9E6162]/30 focus:border-[#9E6162]"
+                    className="w-full px-4 py-2.5 rounded-xl border border-rose-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand"
                   >
                     <option value="">Selecione um tratamento</option>
                     {SERVICE_OPTIONS.map((s) => (
@@ -278,7 +278,7 @@ export default function ContactSection() {
                 <div>
                   <label
                     htmlFor="contact-message"
-                    className="block text-xs font-semibold text-[#5a4040] mb-1"
+                    className="block text-xs font-semibold text-body mb-1"
                   >
                     Mensagem
                   </label>
@@ -289,18 +289,18 @@ export default function ContactSection() {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     placeholder="Conte um pouco sobre o que você precisa..."
-                    className="w-full px-4 py-2.5 rounded-xl border border-rose-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#9E6162]/30 focus:border-[#9E6162] resize-none"
+                    className="w-full px-4 py-2.5 rounded-xl border border-rose-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-[#9E6162] text-white font-semibold py-3 rounded-full hover:bg-[#5e2828] transition-colors shadow-lg shadow-[#9E6162]/20"
+                  className="w-full bg-brand text-white font-semibold py-3 rounded-full hover:bg-brand-dark transition-colors shadow-lg shadow-brand/20"
                 >
                   Solicitar Agendamento
                 </button>
 
-                <p className="text-xs text-[#8a6060] text-center">
+                <p className="text-xs text-muted text-center">
                   Seus dados estão seguros e não serão compartilhados com
                   terceiros.
                 </p>
