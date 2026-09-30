@@ -97,7 +97,20 @@ export const SERVICE_OPTIONS = [
   "Consulta de Avaliação",
 ] as const;
 
+/* -------------------------------------------------------------- pendências */
+
+/**
+ * ⚠️ PLACEHOLDER — SUBSTITUIR pelos CROs reais.
+ * O número de registro no CRO é obrigatório na publicidade odontológica;
+ * "123456" está aqui apenas como marcador de posição e NÃO deve ir ao ar.
+ * Cada profissional precisa do seu próprio registro.
+ */
+export const CRO_PLACEHOLDER = "CRO-SP 123456";
+
 /* ------------------------------------------------------------------ site */
+
+/** Política de privacidade (LGPD) — usada no rodapé e no formulário. */
+export const PRIVACY_PATH = "/privacidade";
 
 export const SITE = {
   name: "Íntegra Odontologia",

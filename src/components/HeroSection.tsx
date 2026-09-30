@@ -12,7 +12,7 @@ const features = [
 
 const stats = [
   { value: "4.9 / 5★", label: "Avaliação Google" },
-  { value: "+1.200", label: "Pacientes Satisfeitos" },
+  { value: "08h–18h", label: "Segunda a sexta" },
   { value: "100%", label: "Dedicação & Carinho" },
 ];
 

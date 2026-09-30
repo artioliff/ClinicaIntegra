@@ -1,12 +1,15 @@
 import { MapPin, Clock, Phone } from "lucide-react";
+import Link from "next/link";
 import {
   ADDRESS_CITY,
   ADDRESS_LINE,
+  CRO_PLACEHOLDER,
   HOURS_SHORT,
   INSTAGRAM_URL,
   NAV_LINKS,
   PHONE_DISPLAY,
   PHONE_TEL,
+  PRIVACY_PATH,
   TREATMENT_LINKS,
   waLink,
 } from "@/config/site";
@@ -116,14 +119,29 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-card-dark pt-6 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="border-t border-card-dark pt-6 flex flex-col sm:flex-row items-center justify-end gap-2">
           <p className="text-xs">
             © {new Date().getFullYear()} Íntegra Odontologia – Todos os direitos
             reservados.
           </p>
           <p className="text-xs">
-            CRO-SP 123456 · Dra. Marcela Souza – Cirurgiã-Dentista
+            {CRO_PLACEHOLDER} · Dra. Marcela Souza – Cirurgiã-Dentista
           </p>
+        </div>
+
+        <div className="mt-4 flex flex-wrap justify-center gap-6 text-xs">
+          <Link
+            href={PRIVACY_PATH}
+            className="hover:text-white transition-colors underline underline-offset-4"
+          >
+            Política de Privacidade
+          </Link>
+          <a
+            href={`tel:${PHONE_TEL}`}
+            className="hover:text-white transition-colors"
+          >
+            {PHONE_DISPLAY}
+          </a>
         </div>
       </div>
     </footer>

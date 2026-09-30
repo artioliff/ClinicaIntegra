@@ -4,6 +4,12 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { GOOGLE_MAPS_SEARCH } from "@/config/site";
 
+/**
+ * ⚠️ PLACEHOLDER — SUBSTITUIR por depoimentos REAIS (coletados no Google ou no
+ * WhatsApp, com autorização do paciente). Publicar depoimentos fictícios é
+ * vedado pelo Código de Defesa do Consumidor e pelo CONAR.
+ * A nota "4.9 / 5.0" também precisa bater com o Google Meu Negócio real.
+ */
 const testimonials = [
   {
     name: "Ana Paula M.",
@@ -68,7 +74,7 @@ export default function TestimonialsSection() {
             O que nossos pacientes falam
           </h2>
           <p className="text-brand-soft max-w-xl mx-auto">
-            Mais de 1.200 pacientes satisfeitos. Veja o que eles dizem sobre a
+            Veja o que os pacientes dizem sobre a
             experiência na Íntegra Odontologia.
           </p>
         </div>

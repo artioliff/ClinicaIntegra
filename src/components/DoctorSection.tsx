@@ -1,12 +1,17 @@
 import { BadgeCheck } from "lucide-react";
 import Image from "next/image";
 import img1 from "../assets/img/Dra Karite Pomponi.jpeg";
-import { waLink } from "@/config/site";
+import { CRO_PLACEHOLDER, waLink } from "@/config/site";
 
+/**
+ * ⚠️ PLACEHOLDER — SUBSTITUIR pelos dados reais de cada profissional:
+ * nomes, CROs (obrigatório na publicidade), especialidades e fotos.
+ * As fotos das duas últimas profissionais são de banco de imagens.
+ */
 const doctors = [
   {
     name: "Dra. Karita Pomponi",
-    cro: "CRO-SP 654321",
+    cro: CRO_PLACEHOLDER, // ⚠️ trocar pelo CRO real
     specialty: "Cirurgiã-Dentista · Especialista em Implantodontia",
     image: img1,
     description1: "Atua com implantes dentários e reabilitação oral, devolvendo função e estética aos pacientes.",
@@ -19,7 +24,7 @@ const doctors = [
   },
   {
     name: "Dra. Marcela Souza",
-    cro: "CRO-SP 123456",
+    cro: CRO_PLACEHOLDER, // ⚠️ trocar pelo CRO real
     specialty: "Cirurgiã-Dentista · Especialista em Odontologia Estética",
     image: "/images/atendimento-dentista.webp",
     description1: "Com mais de 10 anos de experiência, a Dra. Marcela construiu uma carreira pautada na excelência técnica e no atendimento humanizado.",
@@ -32,7 +37,7 @@ const doctors = [
   },  
   {
     name: "Dra. Ana Carolina",
-    cro: "CRO-SP 987654",
+    cro: CRO_PLACEHOLDER, // ⚠️ trocar pelo CRO real
     specialty: "Especialista em Ortodontia",
     image: "/images/equipe-ortodontia.webp",
     description1: "Especialista em alinhadores invisíveis e tratamentos ortodônticos personalizados.",

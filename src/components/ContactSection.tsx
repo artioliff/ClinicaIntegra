@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Link from "next/link";
 import { MapPin, Clock, Phone, CheckCircle2, Navigation } from "lucide-react";
 import {
   ADDRESS_CITY,
@@ -11,6 +12,7 @@ import {
   MAPS_EMBED_SRC,
   PHONE_DISPLAY,
   PHONE_TEL,
+  PRIVACY_PATH,
   SERVICE_OPTIONS,
   waLink,
 } from "@/config/site";
@@ -24,11 +26,12 @@ export default function ContactSection() {
     email: "",
     service: "",
     message: "",
+    consent: false,
   });
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    if (!form.name.trim() || !form.phone.trim()) return;
+    if (!form.name.trim() || !form.phone.trim() || !form.consent) return;
 
     const messageParts = [
       "Olá! Gostaria de agendar uma consulta na Íntegra Odontologia.",
@@ -179,6 +182,7 @@ export default function ContactSection() {
                       email: "",
                       service: "",
                       message: "",
+                      consent: false,
                     });
                   }}
                   className="mt-2 text-sm text-brand underline"
@@ -303,10 +307,35 @@ export default function ContactSection() {
                   Solicitar Agendamento
                 </button>
 
-                <p className="text-xs text-muted text-center">
-                  Seus dados estão seguros e não serão compartilhados com
-                  terceiros.
-                </p>
+                <label
+                  htmlFor="contact-consent"
+                  className="flex items-start gap-2 text-xs text-muted cursor-pointer leading-relaxed"
+                >
+                  <input
+                    id="contact-consent"
+                    name="consent"
+                    type="checkbox"
+                    required
+                    checked={form.consent}
+                    onChange={(e) =>
+                      setForm({ ...form, consent: e.target.checked })
+                    }
+                    className="mt-0.5 h-4 w-4 shrink-0 accent-brand"
+                  />
+                  <span>
+                    Li e concordo com a{" "}
+                    <Link
+                      href={PRIVACY_PATH}
+                      className="underline hover:text-brand"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Política de Privacidade
+                    </Link>
+                    . Seus dados não são armazenados por este site: a mensagem
+                    é aberta no seu WhatsApp.
+                  </span>
+                </label>
               </form>
             )}
           </div>
